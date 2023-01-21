@@ -10,6 +10,7 @@ namespace ScpSwap
     using System;
     using System.ComponentModel;
     using Exiled.API.Interfaces;
+    using PlayerRoles;
 
     /// <inheritdoc />
     public class Config : IConfig
@@ -21,7 +22,7 @@ namespace ScpSwap
         /// Gets or sets a value indicating whether debug messages should be shown.
         /// </summary>
         [Description("Indicates whether debug messages should be shown.")]
-        public bool ShowDebug { get; set; } = false;
+        public bool Debug { get; set; } = false;
 
         /// <summary>
         /// Gets or sets the duration, in seconds, before a swap request gets automatically deleted.
@@ -45,9 +46,9 @@ namespace ScpSwap
         /// Gets or sets a collection of roles blacklisted from being swapped to.
         /// </summary>
         [Description("A collection of roles blacklisted from being swapped to.")]
-        public RoleType[] BlacklistedScps { get; set; } =
+        public RoleTypeId[] BlacklistedScps { get; set; } =
         {
-            RoleType.Scp0492,
+            RoleTypeId.Scp0492,
         };
 
         /// <summary>

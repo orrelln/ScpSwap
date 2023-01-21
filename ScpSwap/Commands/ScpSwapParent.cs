@@ -11,6 +11,7 @@ namespace ScpSwap.Commands
     using System.Linq;
     using CommandSystem;
     using Exiled.API.Features;
+    using PlayerRoles;
     using ScpSwap.Configs;
     using ScpSwap.Models;
 
@@ -125,10 +126,10 @@ namespace ScpSwap.Commands
                 return Player.List.FirstOrDefault(player => customSwap.VerificationMethod(player));
             }
 
-            RoleType roleSwap = ValidSwaps.Get(request);
-            if (roleSwap != RoleType.None)
+            RoleTypeId roleSwap = ValidSwaps.Get(request);
+            if (roleSwap != RoleTypeId.None)
             {
-                spawnMethod = player => player.Role.Type = roleSwap;
+                spawnMethod = player => player.Role.Set(roleSwap);
                 return Player.List.FirstOrDefault(player => player.Role == roleSwap);
             }
 
