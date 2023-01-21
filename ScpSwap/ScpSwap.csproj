@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyName>ScpSwap</AssemblyName>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Authors>Build</Authors>
     <Version>1.1.2</Version>
