@@ -26,7 +26,7 @@ namespace ScpSwap
         public static Plugin Instance { get; private set; }
 
         /// <inheritdoc />
-        public override string Author => "DentyTxR";
+        public override string Author => "Vicious Vikki";
 
         /// <inheritdoc />
         public override string Name => "ScpSwap";
@@ -35,10 +35,10 @@ namespace ScpSwap
         public override string Prefix => "ScpSwap";
 
         /// <inheritdoc />
-        public override Version RequiredExiledVersion { get; } = new Version(6, 0, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(8, 1, 0);
 
         /// <inheritdoc />
-        public override Version Version { get; } = new Version(1, 1, 3);
+        public override Version Version { get; } = new Version(1, 1, 5);
 
         /// <inheritdoc />
         public override void OnEnabled()
