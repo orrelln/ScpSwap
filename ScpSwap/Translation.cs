@@ -41,6 +41,7 @@ namespace ScpSwap
             { "0492", RoleTypeId.Scp0492 },
             { "492", RoleTypeId.Scp0492 },
             { "zombie", RoleTypeId.Scp0492 },
+            { "3114", RoleTypeId.Scp3114 },
         };
 
         /// <summary>
