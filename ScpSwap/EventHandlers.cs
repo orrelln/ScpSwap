@@ -11,6 +11,7 @@ namespace ScpSwap
     using Exiled.Events.EventArgs;
     using Exiled.Events.EventArgs.Player;
     using MEC;
+    using PlayerRoles;
     using ScpSwap.Models;
 
     /// <summary>
@@ -27,17 +28,10 @@ namespace ScpSwap
         public EventHandlers(Plugin plugin) => this.plugin = plugin;
 
         /// <inheritdoc cref="Exiled.Events.Handlers.Server.OnRoundStarted"/>
-        public void OnChangingRole(ChangingRoleEventArgs ev)
+        public void OnSpawned(SpawnedEventArgs ev)
         {
-            if (!ev.IsAllowed || ev.Player.IsScp || ValidSwaps.GetCustom(ev.Player) != null)
-                return;
-
-            Timing.CallDelayed(0.1f, () =>
-            {
-                if ((ev.Player.IsScp || ValidSwaps.GetCustom(ev.Player) != null) &&
-                    Round.ElapsedTime.TotalSeconds < plugin.Config.SwapTimeout)
-                    ev.Player.Broadcast(plugin.Translation.StartMessage);
-            });
+            if ((ev.Player.IsScp || ValidSwaps.GetCustom(ev.Player) != null) && ev.OldRole.Type.GetTeam() != Team.SCPs && Round.ElapsedTime.TotalSeconds < plugin.Config.SwapTimeout)
+                ev.Player.Broadcast(plugin.Translation.StartMessage);
         }
 
         /// <inheritdoc cref="Exiled.Events.Handlers.Server.OnReloadedConfigs"/>
