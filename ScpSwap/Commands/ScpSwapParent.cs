@@ -113,6 +113,12 @@ namespace ScpSwap.Commands
                 return true;
             }
 
+            if (Plugin.Instance.Config.BlacklistedSwapFromScps.Contains(playerSender.Role.Type))
+            {
+                response = "You're not allowed to swap off from this SCP.";
+                return false;
+            }
+
             response = "Unable to locate a player with the requested role.";
             return false;
         }

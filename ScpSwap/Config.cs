@@ -56,5 +56,14 @@ namespace ScpSwap
         /// </summary>
         [Description("A collection of the names of custom scps blacklisted from being swapped to. This must match the name the developer integrated the SCP into this plugin's API with.")]
         public string[] BlacklistedNames { get; set; } = Array.Empty<string>();
+
+        /// <summary>
+        /// Gets or sets roles of SCPs who cannot be swapped off from.
+        /// </summary>
+        [Description("A collection of roles blacklisted from swapping off from.")]
+        public RoleTypeId[] BlacklistedSwapFromScps { get; set; } =
+        {
+            RoleTypeId.Scp0492,
+        };
     }
 }
