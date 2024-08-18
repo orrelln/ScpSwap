@@ -13,7 +13,7 @@ jobs:
     - name: Download 7zip
       uses: carlosperate/download-file-action@v1.0.3
       with:
-        file-url: 'https://www.7-zip.org/a/7z2408-x64.exe'
+        file-url: 'https://www.7-zip.org/a/7zr.exe'
         file-name: '7zip.exe'
 
     - name: Download references
