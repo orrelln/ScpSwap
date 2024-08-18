@@ -62,6 +62,12 @@ namespace ScpSwap.Commands
                 return false;
             }
 
+            if (Player.List.Count() >= 8)
+            {
+                response = "More than one scp.";
+                return false;
+            }
+
             if (Round.ElapsedTime.TotalSeconds > Plugin.Instance.Config.SwapTimeout)
             {
                 response = "The swap period has ended.";
