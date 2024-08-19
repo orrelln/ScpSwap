@@ -62,7 +62,7 @@ namespace ScpSwap.Commands
                 return false;
             }
 
-            if (Player.List.Count() >= 8)
+            if (Player.List.Count >= 8)
             {
                 response = "More than one scp.";
                 return false;
