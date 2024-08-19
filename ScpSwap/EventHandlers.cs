@@ -2,7 +2,7 @@
 // <copyright file="EventHandlers.cs" company="Build">
 // Copyright (c) Build. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
-// </copyright> 
+// </copyright>
 // -----------------------------------------------------------------------
 
 namespace ScpSwap
@@ -30,7 +30,7 @@ namespace ScpSwap
         /// <inheritdoc cref="Exiled.Events.Handlers.Server.OnRoundStarted"/>
         public void OnSpawned(SpawnedEventArgs ev)
         {
-            if ((ev.Player.IsScp || ValidSwaps.GetCustom(ev.Player) != null) && Player.List.Count() < 8 && ev.OldRole.Type.GetTeam() != Team.SCPs && Round.ElapsedTime.TotalSeconds < plugin.Config.SwapTimeout)
+            if ((ev.Player.IsScp || ValidSwaps.GetCustom(ev.Player) != null) && Player.List.Count < 8 && ev.OldRole.Type.GetTeam() != Team.SCPs && Round.ElapsedTime.TotalSeconds < plugin.Config.SwapTimeout)
                 ev.Player.Broadcast(plugin.Translation.StartMessage);
         }
 
